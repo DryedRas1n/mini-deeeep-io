@@ -1,64 +1,31 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mini Deeeep.io Clone</title>
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-            background-color: #0077be;
-        }
-        canvas {
-            display: block;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Hosted URL Content</title>
 </head>
 <body>
-    <canvas id="game"></canvas>
+  <h1>Your Decoded Content</h1>
+  <p>We have decoded the URL below:</p>
+  <p id="decoded-url"></p>
 
-    <script>
-        const canvas = document.getElementById("game");
-        const ctx = canvas.getContext("2d");
+  <script>
+    // Your decoded URL
+    var decodedUrl = '/hvtrs8%2F-dgeger.ko-%3Fjoqt%3FSghm4%40';
 
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+    // Update the page to show the decoded URL
+    document.getElementById('decoded-url').innerText = decodedUrl;
 
-        // Simple placeholder: A blue circle that moves on the screen
-        let player = {
-            x: canvas.width / 2,
-            y: canvas.height / 2,
-            radius: 20,
-            color: "blue",
-            dx: 5,
-            dy: 5
-        };
+    // Example: If the URL is supposed to be appended to a base URL
+    var baseUrl = 'https://edu.defdc.com/a'; // Use your base URL here
+    var fullUrl = baseUrl + decodedUrl;
 
-        // Update function to animate the player
-        function update() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
-            ctx.beginPath();
-            ctx.arc(player.x, player.y, player.radius, 0, Math.PI * 2);
-            ctx.fillStyle = player.color;
-            ctx.fill();
+    // Example: Display the full URL and possibly redirect
+    document.getElementById('decoded-url').innerText = fullUrl;
 
-            player.x += player.dx;
-            player.y += player.dy;
-
-            // Bounce off the walls
-            if (player.x + player.radius > canvas.width || player.x - player.radius < 0) {
-                player.dx = -player.dx;
-            }
-            if (player.y + player.radius > canvas.height || player.y - player.radius < 0) {
-                player.dy = -player.dy;
-            }
-
-            requestAnimationFrame(update); // Recursively update the animation
-        }
-
-        update(); // Start the game animation
-    </script>
+    // Optionally, you can redirect to this full URL
+    window.location.href = fullUrl; // Uncomment this line to auto-redirect the page
+  </script>
 </body>
 </html>
