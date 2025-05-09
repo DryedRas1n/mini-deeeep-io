@@ -3,29 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Hosted URL Content</title>
+  <title>Your Hosted Decoded Content</title>
 </head>
 <body>
   <h1>Your Decoded Content</h1>
-  <p>We have decoded the URL below:</p>
+  <p>This is the decoded URL content:</p>
   <p id="decoded-url"></p>
 
   <script>
-    // Your decoded URL
+    // Your decoded URL content
     var decodedUrl = '/hvtrs8%2F-dgeger.ko-%3Fjoqt%3FSghm4%40';
-
-    // Update the page to show the decoded URL
+    
+    // Just display the decoded content
     document.getElementById('decoded-url').innerText = decodedUrl;
-
-    // Example: If the URL is supposed to be appended to a base URL
-    var baseUrl = 'https://edu.defdc.com/a'; // Use your base URL here
-    var fullUrl = baseUrl + decodedUrl;
-
-    // Example: Display the full URL and possibly redirect
-    document.getElementById('decoded-url').innerText = fullUrl;
-
-    // Optionally, you can redirect to this full URL
-    window.location.href = fullUrl; // Uncomment this line to auto-redirect the page
   </script>
 </body>
 </html>
